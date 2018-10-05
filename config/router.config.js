@@ -19,6 +19,19 @@ export default [
     routes: [
       // dashboard
       { path: '/', redirect: '/dashboard/analysis' },
+      // debugassistant
+      {
+        path: '/debugassistant',
+        name: 'debugassistant',
+        icon: 'warning',
+        routes: [
+          {
+            path: '/debugassistant/remotelog',
+            name: 'remotelog',
+            component: './DebugAssistant/RemoteLog',
+          },
+        ],
+      },
       {
         path: '/dashboard',
         name: 'dashboard',
