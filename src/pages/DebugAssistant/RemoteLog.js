@@ -35,14 +35,6 @@ class RemoteLog extends Component {
   }
 
   componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch({
-      type: 'list/fetch',
-      payload: {
-        count: 5,
-      },
-    });
-
     this.logList = [];
 
     this.openLogWebSocket();

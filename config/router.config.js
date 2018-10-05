@@ -18,7 +18,7 @@ export default [
     authority: ['admin', 'user'],
     routes: [
       // dashboard
-      { path: '/', redirect: '/dashboard/analysis' },
+      { path: '/', redirect: '/debugassistant/remotelog' },
       // {
       //   path: '/dashboard',
       //   name: 'dashboard',
