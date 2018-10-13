@@ -37,7 +37,7 @@ export default class GlobalHeader extends PureComponent {
           onClick={this.toggle}
         />
 
-        {/*<RightContent {...this.props} />*/}
+        <RightContent {...this.props} />
       </div>
     );
   }

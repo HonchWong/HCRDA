@@ -80,22 +80,22 @@ class LoginPage extends Component {
             {login.status === 'error' &&
               login.type === 'account' &&
               !submitting &&
-              this.renderMessage('账户或密码错误（admin/888888）')}
-            <UserName name="userName" placeholder="admin/user" />
+              this.renderMessage('账户或密码错误')}
+            <UserName name="userName" placeholder="userName" />
             <Password
               name="password"
-              placeholder="888888/123456"
+              placeholder="password"
               onPressEnter={() => this.loginForm.validateFields(this.handleSubmit)}
             />
           </Tab>
-          <Tab key="mobile" tab={formatMessage({ id: 'app.login.tab-login-mobile' })}>
-            {login.status === 'error' &&
-              login.type === 'mobile' &&
-              !submitting &&
-              this.renderMessage('验证码错误')}
-            <Mobile name="mobile" />
-            <Captcha name="captcha" countDown={120} onGetCaptcha={this.onGetCaptcha} />
-          </Tab>
+          {/*<Tab key="mobile" tab={formatMessage({ id: 'app.login.tab-login-mobile' })}>*/}
+          {/*{login.status === 'error' &&*/}
+          {/*login.type === 'mobile' &&*/}
+          {/*!submitting &&*/}
+          {/*this.renderMessage('验证码错误')}*/}
+          {/*<Mobile name="mobile" />*/}
+          {/*<Captcha name="captcha" countDown={120} onGetCaptcha={this.onGetCaptcha} />*/}
+          {/*</Tab>*/}
           <div>
             <Checkbox checked={autoLogin} onChange={this.changeAutoLogin}>
               <FormattedMessage id="app.login.remember-me" />
@@ -107,15 +107,15 @@ class LoginPage extends Component {
           <Submit loading={submitting}>
             <FormattedMessage id="app.login.login" />
           </Submit>
-          <div className={styles.other}>
-            <FormattedMessage id="app.login.sign-in-with" />
-            <Icon type="alipay-circle" className={styles.icon} theme="outlined" />
-            <Icon type="taobao-circle" className={styles.icon} theme="outlined" />
-            <Icon type="weibo-circle" className={styles.icon} theme="outlined" />
-            <Link className={styles.register} to="/User/Register">
-              <FormattedMessage id="app.login.signup" />
-            </Link>
-          </div>
+          {/*<div className={styles.other}>*/}
+          {/*<FormattedMessage id="app.login.sign-in-with" />*/}
+          {/*<Icon type="alipay-circle" className={styles.icon} theme="outlined" />*/}
+          {/*<Icon type="taobao-circle" className={styles.icon} theme="outlined" />*/}
+          {/*<Icon type="weibo-circle" className={styles.icon} theme="outlined" />*/}
+          {/*<Link className={styles.register} to="/User/Register">*/}
+          {/*<FormattedMessage id="app.login.signup" />*/}
+          {/*</Link>*/}
+          {/*</div>*/}
         </Login>
       </div>
     );
