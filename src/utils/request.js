@@ -69,6 +69,8 @@ export default function request(
     expirys: isAntdPro(),
   }
 ) {
+  // url = "http://192.168.199.220:8080" + url;
+  console.log('request url ' + url);
   /**
    * Produce fingerprints based on url and parameters
    * Maybe url has the same parameters

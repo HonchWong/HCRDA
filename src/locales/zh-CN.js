@@ -80,7 +80,7 @@ export default {
   'menu.debugassistant.apimanager': '接口管理',
   'menu.userlogmanager': '用户日志',
   'menu.userlogmanager.loglist': '日志列表',
-  'menu.userlogmanager.fetuserlog': '回捞日志',
+  'menu.userlogmanager.fetuserlog': '指定用户',
   'menu.form': '表单页',
   'menu.form.basicform': '基础表单',
   'menu.form.stepform': '分步表单',

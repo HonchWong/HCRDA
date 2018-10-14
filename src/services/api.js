@@ -50,6 +50,29 @@ export async function fakeSubmitForm(params) {
   });
 }
 
+export async function updateNeedUploadListApi(params) {
+  console.log('updateNeedUploadList_api');
+  return request('/api/updateNeedUploadList', {
+    method: 'POST',
+    body: params,
+  });
+}
+
+export async function needUploadList() {
+  console.log('needUploadList_api');
+  return request('/api/needUploadList');
+}
+
+export async function getFileList() {
+  console.log('getFileList_api');
+  return request('/api/getFileList');
+}
+
+export async function download(params) {
+  console.log('download_api');
+  return request(`/api/download/${stringify(params)}`);
+}
+
 export async function fakeChartData() {
   return request('/api/fake_chart_data');
 }

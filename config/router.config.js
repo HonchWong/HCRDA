@@ -67,13 +67,13 @@ export default [
         authority: ['admin'],
         routes: [
           {
-            path: '/userlogmanager/loglist',
-            name: 'loglist',
-            component: './DebugAssistant/RemoteLog',
-          },
-          {
             path: '/userlogmanager/fetuserlog',
             name: 'fetuserlog',
+            component: './UserLogManager/AssignUser',
+          },
+          {
+            path: '/userlogmanager/loglist',
+            name: 'loglist',
             component: './DebugAssistant/RemoteLog',
           },
         ],

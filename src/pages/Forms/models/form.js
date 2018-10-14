@@ -1,6 +1,6 @@
 import { routerRedux } from 'dva/router';
 import { message } from 'antd';
-import { fakeSubmitForm } from '@/services/api';
+import { fakeSubmitForm, updateNeedUploadList } from '@/services/api';
 
 export default {
   namespace: 'form',
@@ -30,6 +30,11 @@ export default {
     *submitAdvancedForm({ payload }, { call }) {
       yield call(fakeSubmitForm, payload);
       message.success('提交成功');
+    },
+    *updateNeedUploadList({ payload }, { call }) {
+      yield call(updateNeedUploadListApi, payload);
+      message.success('提交成功');
+      console.log('form.js updateNeedUploadListApi');
     },
   },
 

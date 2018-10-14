@@ -121,6 +121,33 @@ function getFakeList(req, res) {
   return res.json(result);
 }
 
+function getFakeNeedUploadList(req, res) {
+  const params = req.query;
+
+  const result = {
+    needUploadList: [
+      {
+        key: '123',
+        uin: '625845706',
+      },
+      {
+        key: '456',
+        uin: '777777',
+      },
+      {
+        key: '8888',
+        uin: '625845706',
+      },
+      {
+        key: '99999',
+        uin: '777777',
+      },
+    ],
+  };
+  sourceData = result;
+  return res.json(result);
+}
+
 function postFakeList(req, res) {
   const { /* url = '', */ body } = req;
   // const params = getUrlParams(url);
@@ -331,6 +358,7 @@ export default {
     'list|100': [{ name: '@city', 'value|1-100': 150, 'type|0-2': 1 }],
   }),
   'GET /api/fake_list': getFakeList,
+  'GET /api/needUploadList': getFakeNeedUploadList,
   'POST /api/fake_list': postFakeList,
   'GET /api/captcha': getFakeCaptcha,
 };

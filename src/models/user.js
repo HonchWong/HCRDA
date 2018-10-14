@@ -22,6 +22,7 @@ export default {
         type: 'saveCurrentUser',
         payload: response,
       });
+      console.log('fetchCurrent');
     },
   },
 
