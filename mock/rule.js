@@ -75,6 +75,44 @@ function getRule(req, res, u) {
   return res.json(result);
 }
 
+function getFileList(req, res) {
+  const result = {
+    "list": [
+      {
+        "key": 8,
+        "disabled": false,
+        "href": "https://ant.design",
+        "avatar": "https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png",
+        "name": "TradeCode 8",
+        "title": "一个任务名称 8",
+        "owner": "曲丽丽",
+        "desc": "这是一段描述",
+        "callNo": 987,
+        "status": 1,
+        "updatedAt": "2017-07-05T00:00:00.000Z",
+        "createdAt": "2017-07-05T00:00:00.000Z",
+        "progress": 9
+      },
+      {
+        "key": 28,
+        "disabled": false,
+        "href": "https://ant.design",
+        "avatar": "https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png",
+        "name": "TradeCode 28",
+        "title": "一个任务名称 28",
+        "owner": "曲丽丽",
+        "desc": "这是一段描述",
+        "callNo": 972,
+        "status": 0,
+        "updatedAt": "2017-07-15T00:00:00.000Z",
+        "createdAt": "2017-07-15T00:00:00.000Z",
+        "progress": 74
+      },
+    ],
+  };
+  return res.json(result);
+}
+
 function postRule(req, res, u, b) {
   let url = u;
   if (!url || Object.prototype.toString.call(url) !== '[object String]') {
@@ -135,4 +173,5 @@ function postRule(req, res, u, b) {
 export default {
   'GET /api/rule': getRule,
   'POST /api/rule': postRule,
+  'GET /api/getFileList': getFileList,
 };
