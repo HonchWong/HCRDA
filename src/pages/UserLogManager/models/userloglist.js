@@ -1,4 +1,4 @@
-import { getFileList, removeRule, addRule, updateRule } from '@/services/api';
+import { getFileList, removeRule, addRule, updateRule , download} from '@/services/api';
 
 export default {
   namespace: 'userloglist',
@@ -17,6 +17,14 @@ export default {
         payload: response,
       });
     },
+    *downloadFile({ payload }, { call, put }) {
+      const response = yield call(download, payload);
+      // yield put({
+      //   type: 'save',
+      //   payload: response,
+      // });
+    },
+
     *add({ payload, callback }, { call, put }) {
       const response = yield call(addRule, payload);
       yield put({

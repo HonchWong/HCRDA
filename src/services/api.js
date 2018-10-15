@@ -69,8 +69,8 @@ export async function getFileList() {
 }
 
 export async function download(params) {
-  console.log('download_api');
-  return request(`/api/download/${stringify(params)}`);
+  console.log('download_api params ' + params);
+  return request('/api/download/' + params);
 }
 
 export async function fakeChartData() {
