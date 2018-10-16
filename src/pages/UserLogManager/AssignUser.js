@@ -36,21 +36,6 @@ const fieldLabels = {
   type2: '任务类型',
 };
 
-const tableData = [
-  {
-    key: '1',
-    uin: '625845706',
-  },
-  {
-    key: '2',
-    uin: '1234',
-  },
-  {
-    key: '3',
-    uin: '5678',
-  },
-];
-
 @connect(({ assignuser, loading }) => ({
   submitting: loading.effects['assignuser/updateNeedUploadList'],
   fetchNeedUploadListLoading: loading.effects['assignuser/fetchNeedUploadList'],
@@ -159,11 +144,11 @@ class AssignUser extends PureComponent {
 
     return (
       <PageHeaderWrapper
-        title="高级表单"
-        content="高级表单常见于一次性输入和提交大批量数据的场景。"
+        title="指定用户上传日志"
+        content="用户列表中的用户将会开启上传日志的入口"
         wrapperClassName={styles.advancedForm}
       >
-        <Card title="指定用户" bordered={false} loading={fetchNeedUploadListLoading}>
+        <Card title="用户列表" bordered={false} loading={fetchNeedUploadListLoading}>
           {getFieldDecorator('needUploadList', {
             initialValue: data.needUploadList,
           })(<TableForm />)}

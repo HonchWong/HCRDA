@@ -41,6 +41,7 @@ const status = ['关闭', '运行中', '已上线', '异常'];
 /* eslint react/no-multi-comp:0 */
 @connect(({ userloglist, loading }) => ({
   userloglist,
+  fileList: userloglist.data.list,
   loading: loading.models.userloglist,
 }))
 @Form.create()
@@ -89,7 +90,7 @@ class UserLogList extends PureComponent {
     });
     dispatch({
       type: 'userloglist/fetch',
-      payload: {},
+      payload: null,
     });
   };
 
@@ -112,7 +113,7 @@ class UserLogList extends PureComponent {
 
       dispatch({
         type: 'userloglist/fetch',
-        payload: values,
+        payload: fieldsValue,
       });
     });
   };
@@ -135,7 +136,7 @@ class UserLogList extends PureComponent {
       <Form onSubmit={this.handleSearch} layout="inline">
         <Row gutter={{ md: 8, lg: 24, xl: 48 }}>
           <Col md={8} sm={24}>
-            <FormItem label="用户uin">
+            <FormItem label="关键词">
               {getFieldDecorator('name')(<Input placeholder="请输入" />)}
             </FormItem>
           </Col>
@@ -165,7 +166,7 @@ class UserLogList extends PureComponent {
     } = this.props;
     const { selectedRows, modalVisible, updateModalVisible, stepFormValues } = this.state;
     return (
-      <PageHeaderWrapper title="查询表格">
+      <PageHeaderWrapper title="查看用户日志">
         <Card bordered={false}>
           <div className={styles.tableList}>
             <div className={styles.tableListForm}>{this.renderForm()}</div>

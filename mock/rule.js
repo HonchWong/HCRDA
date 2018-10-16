@@ -75,22 +75,6 @@ function getRule(req, res, u) {
   return res.json(result);
 }
 
-function getFileList(req, res) {
-  const result = {
-    "list": [
-      {
-        "key": 8,
-        "name": "TradeCode 8",
-      },
-      {
-        "key": 28,
-        "name": "TradeCode 28",
-      },
-    ],
-  };
-  return res.json(result);
-}
-
 function postRule(req, res, u, b) {
   let url = u;
   if (!url || Object.prototype.toString.call(url) !== '[object String]') {
@@ -151,5 +135,4 @@ function postRule(req, res, u, b) {
 export default {
   'GET /api/rule': getRule,
   'POST /api/rule': postRule,
-  'GET /api/getFileList': getFileList,
 };

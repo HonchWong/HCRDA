@@ -24,31 +24,22 @@ export default {
       //   payload: response,
       // });
     },
-
-    *add({ payload, callback }, { call, put }) {
-      const response = yield call(addRule, payload);
-      yield put({
-        type: 'save',
-        payload: response,
-      });
-      if (callback) callback();
-    },
-    *remove({ payload, callback }, { call, put }) {
-      const response = yield call(removeRule, payload);
-      yield put({
-        type: 'save',
-        payload: response,
-      });
-      if (callback) callback();
-    },
-    *update({ payload, callback }, { call, put }) {
-      const response = yield call(updateRule, payload);
-      yield put({
-        type: 'save',
-        payload: response,
-      });
-      if (callback) callback();
-    },
+    // *search({ payload }, { call, put }) {
+    //   var data = this.state.data;
+    //   for(var i = 0; i < data.list.length; i++) {
+    //     var fileName = data.list[i].name;
+    //     if (fileName.indexOf(payload) == -1) {
+    //       data.list.splice(i, 1);
+    //     }
+    //   }
+    //   // this.data.list = fileNames;
+    //
+    //   const response = yield call(searchFile, payload);
+    //   yield put({
+    //     type: 'save',
+    //     payload: response,
+    //   });
+    // },
   },
 
   reducers: {

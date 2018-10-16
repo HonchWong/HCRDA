@@ -69,7 +69,7 @@ export default function request(
     expirys: isAntdPro(),
   }
 ) {
-  // url = "http://192.168.199.220:8080" + url;
+  // url = "http://10.99.25.50:8080" + url;
   console.log('request url ' + url);
   /**
    * Produce fingerprints based on url and parameters

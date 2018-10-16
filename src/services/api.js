@@ -63,14 +63,18 @@ export async function needUploadList() {
   return request('/api/needUploadList');
 }
 
-export async function getFileList() {
+export async function getFileList(params) {
   console.log('getFileList_api');
-  return request('/api/getFileList');
+  if (!params) {
+    params = {name: 'allFile'};
+  }
+  return request(`/api/getFileList?${stringify(params)}`);
 }
 
 export async function download(params) {
   console.log('download_api params ' + params);
-  return request('/api/download/' + params);
+  var url = "http://10.99.25.50:8080/api/download/" + params;
+  return window.open(url);
 }
 
 export async function fakeChartData() {

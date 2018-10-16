@@ -348,6 +348,26 @@ function getFakeCaptcha(req, res) {
   return res.json('captcha-xxx');
 }
 
+function getFileList(req, res) {
+  const result = {
+    "list": [
+      {
+        "key": 8,
+        "name": "TradeCode 8",
+      },
+      {
+        "key": 28,
+        "name": "TradeCode 28",
+      },
+      {
+        "key": 33,
+        "name": "Tabc",
+      },
+    ],
+  };
+  return res.json(result);
+}
+
 export default {
   'GET /api/project/notice': getNotice,
   'GET /api/activities': getActivities,
@@ -361,4 +381,5 @@ export default {
   'GET /api/needUploadList': getFakeNeedUploadList,
   'POST /api/fake_list': postFakeList,
   'GET /api/captcha': getFakeCaptcha,
+  'GET /api/getFileList': getFileList,
 };
