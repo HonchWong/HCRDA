@@ -148,7 +148,12 @@ class AssignUser extends PureComponent {
         content="用户列表中的用户将会开启上传日志的入口"
         wrapperClassName={styles.advancedForm}
       >
-        <Card title="用户列表" bordered={false} loading={fetchNeedUploadListLoading}>
+        <Card
+          title="用户列表"
+          bordered={false}
+          loading={fetchNeedUploadListLoading}
+          style={{ marginBottom: 70 }}
+        >
           {getFieldDecorator('needUploadList', {
             initialValue: data.needUploadList,
           })(<TableForm />)}

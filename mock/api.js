@@ -137,6 +137,7 @@ function getFakeNeedUploadList(req, res) {
       {
         key: '8888',
         uin: '62584570633',
+        uploadType: '62584570633',
       },
       {
         key: '99999',
@@ -350,18 +351,18 @@ function getFakeCaptcha(req, res) {
 
 function getFileList(req, res) {
   const result = {
-    "list": [
+    list: [
       {
-        "key": 8,
-        "name": "TradeCode 8",
+        key: 8,
+        name: 'TradeCode 8',
       },
       {
-        "key": 28,
-        "name": "TradeCode 28",
+        key: 28,
+        name: 'TradeCode 28',
       },
       {
-        "key": 33,
-        "name": "Tabc",
+        key: 33,
+        name: 'Tabc',
       },
     ],
   };

@@ -69,14 +69,14 @@ export default function request(
     expirys: isAntdPro(),
   }
 ) {
-  // url = "http://10.99.25.50:8080" + url;
-  console.log('request url ' + url);
+  url = 'http://localhost:9080' + url;
+  // console.log('request url ' + url);
   /**
    * Produce fingerprints based on url and parameters
    * Maybe url has the same parameters
    */
   const fingerprint = url + (options.body ? JSON.stringify(options.body) : '');
-  console.log('request fingerprint ' + fingerprint);
+  // console.log('request fingerprint ' + fingerprint);
   const hashcode = hash
     .sha256()
     .update(fingerprint)

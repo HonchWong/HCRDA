@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
-import { Table, Button, Input, message, Popconfirm, Divider } from 'antd';
+import { Table, Button, Input, message, Popconfirm, Divider, Select } from 'antd';
 import isEqual from 'lodash/isEqual';
 import styles from './AssignUser.less';
 
@@ -84,7 +84,11 @@ class AssignUserTable extends PureComponent {
     const newData = data.map(item => ({ ...item }));
     const target = this.getRowByKey(key, newData);
     if (target) {
-      target[fieldName] = e.target.value;
+      if (!e.target) {
+        target[fieldName] = e;
+      } else {
+        target[fieldName] = e.target.value;
+      }
       this.setState({ data: newData });
     }
   }
@@ -140,7 +144,7 @@ class AssignUserTable extends PureComponent {
         title: '用户uin',
         dataIndex: 'uin',
         key: 'uin',
-        width: '80%',
+        width: '40%',
         render: (text, record) => {
           if (record.editable) {
             return (
@@ -154,6 +158,51 @@ class AssignUserTable extends PureComponent {
             );
           }
           return text;
+        },
+      },
+      {
+        title: '上传类型',
+        dataIndex: 'uploadType',
+        key: 'uploadType',
+        width: '40%',
+        render: (text, record) => {
+          if (record.editable) {
+            return (
+              <Select
+                placeholder="请选择"
+                style={{ width: '100%' }}
+                onChange={e => this.handleFieldChange(e, 'uploadType', record.key)}
+              >
+                <Option value="1">选择日期上传单个日志</Option>
+                <Option value="2">上传全部日志</Option>
+                <Option value="3">上传数据库</Option>
+                <Option value="4">上传全部日志和数据库</Option>
+                <Option value="5">选择日期发送单个日志到微信</Option>
+                <Option value="6">发送全部日志到微信</Option>
+                <Option value="7">发送数据库到微信</Option>
+                <Option value="8">发送全部日志和数据库到微信</Option>
+              </Select>
+            );
+          }
+          var showText = '上传类型';
+          if (text === '1') {
+            showText = '选择日期上传单个日志';
+          } else if (text === '2') {
+            showText = '上传全部日志';
+          } else if (text === '3') {
+            showText = '上传数据库';
+          } else if (text === '4') {
+            showText = '上传全部日志和数据库';
+          } else if (text === '5') {
+            showText = '选择日期发送单个日志到微信';
+          } else if (text === '6') {
+            showText = '发送全部日志到微信';
+          } else if (text === '7') {
+            showText = '发送数据库到微信';
+          } else if (text === '8') {
+            showText = '发送全部日志和数据库到微信';
+          }
+          return showText;
         },
       },
       {

@@ -66,14 +66,14 @@ export async function needUploadList() {
 export async function getFileList(params) {
   console.log('getFileList_api');
   if (!params) {
-    params = {name: 'allFile'};
+    params = { name: 'allFile' };
   }
   return request(`/api/getFileList?${stringify(params)}`);
 }
 
 export async function download(params) {
   console.log('download_api params ' + params);
-  var url = "http://10.99.25.50:8080/api/download/" + params;
+  var url = 'http://localhost:9080' + params;
   return window.open(url);
 }
 
