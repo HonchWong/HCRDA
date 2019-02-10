@@ -73,7 +73,7 @@ export async function getFileList(params) {
 
 export async function download(params) {
   console.log('download_api params ' + params);
-  var url = 'http://localhost:9080' + params;
+  var url = 'http://localhost:9080/api/download/' + params;
   return window.open(url);
 }
 
